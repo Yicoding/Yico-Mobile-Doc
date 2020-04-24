@@ -6,8 +6,8 @@ const useStyles = createUseStyles({
     color: '#000',
     fontSize: '16px',
     fontWeight: 'bold',
-    position: 'relative'
-  }
+    position: 'relative',
+  },
 });
 
 export default useStyles;

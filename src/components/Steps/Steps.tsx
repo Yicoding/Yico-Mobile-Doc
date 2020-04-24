@@ -1,14 +1,13 @@
 /**
  * Steps
  */
-import React from "react";
+import React from 'react';
 
 import classnames from 'classnames';
-import StepBox from "./styles";
+import StepBox from './styles';
 
-export default function(props) {
-
-  const { children, current, size = "large", direction = "row" } = props;
+export default function(props?: any) {
+  const { children, current, size = 'large', direction = 'row' } = props;
   const classes = StepBox(props);
 
   const newChildren = React.Children.map(children, (item, index) => {
@@ -18,9 +17,11 @@ export default function(props) {
       size,
       current,
       direction,
-      total
+      total,
     });
   });
 
-  return <div className={classnames(classes.steps, direction)}>{newChildren}</div>;
+  return (
+    <div className={classnames(classes.steps, direction)}>{newChildren}</div>
+  );
 }

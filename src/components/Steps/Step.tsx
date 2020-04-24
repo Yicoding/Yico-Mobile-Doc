@@ -1,23 +1,23 @@
 /**
  * Steps
  */
-import React, { useCallback } from "react";
+import React, { useCallback } from 'react';
 
-import classnames from "classnames";
+import classnames from 'classnames';
 
-import { StepItem } from "./styles";
+import { StepItem } from './styles';
 
-export default function(props) {
+export default function(props?: any) {
   const {
-    status = "active",
-    size = "large",
+    status = 'active',
+    size = 'large',
     current = 0,
     index = 0,
-    direction = "row",
+    direction = 'row',
     total = 0,
     icon,
     title,
-    desc
+    desc,
   } = props;
 
   const classes = StepItem();
@@ -29,7 +29,7 @@ export default function(props) {
     }
     return (
       <div className={`icon icon-${size} icon-${status}`}>
-        {status === "active" || status === "disabled" ? index + 1 : null}
+        {status === 'active' || status === 'disabled' ? index + 1 : null}
       </div>
     );
   }, []);
@@ -39,7 +39,7 @@ export default function(props) {
     if (!title) {
       return null;
     }
-    return <p className={classnames("title", `title-${status}`)}>{title}</p>;
+    return <p className={classnames('title', `title-${status}`)}>{title}</p>;
   }, []);
 
   // 渲染描述
@@ -47,7 +47,7 @@ export default function(props) {
     if (!desc) {
       return null;
     }
-    if (typeof desc === "string") {
+    if (typeof desc === 'string') {
       return <p className="desc">{desc}</p>;
     }
     return desc;
@@ -60,10 +60,10 @@ export default function(props) {
         `item-${direction}`,
         `item-${size}`,
         total === 1 || index === total - 1 // eslint-disable-line
-          ? ""
+          ? ''
           : index < current
-          ? "line-active"
-          : "line-disabled"
+          ? 'line-active'
+          : 'line-disabled',
       )}
     >
       {RendenIcon()}

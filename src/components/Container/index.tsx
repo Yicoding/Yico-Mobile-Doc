@@ -2,13 +2,10 @@ import React from 'react';
 
 import useStyles from './styles';
 
-export default ({ children }) => {
+export default (props?: any) => {
+  const { children } = props;
 
   const classes = useStyles();
 
-  return (
-    <div className={classes.container}>
-      {children}
-    </div>
-  )
+  return <div className={classes.container}>{children}</div>;
 };

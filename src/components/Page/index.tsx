@@ -2,7 +2,8 @@ import React from 'react';
 
 import useStyles from './styles';
 
-export default ({ children, name }) => {
+export default (props?: any) => {
+  const { children, name } = props;
 
   const classes = useStyles();
 
@@ -12,9 +13,7 @@ export default ({ children, name }) => {
         <div className="status-bar" />
         <div className="status-name">{name}</div>
       </div>
-      <div className="content">
-        {children}
-      </div>
+      <div className="content">{children}</div>
     </div>
-  )
+  );
 };

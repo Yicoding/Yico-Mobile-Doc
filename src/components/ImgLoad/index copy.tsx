@@ -1,9 +1,9 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback } from 'react';
 
-import { Flex } from "antd-mobile";
-import WxImageViewer from "react-wx-images-viewer";
-import services from "@/services";
-import Container from "./styles";
+import { Flex } from 'antd-mobile';
+import WxImageViewer from 'react-wx-images-viewer';
+import services from '@/services';
+import Container from './styles';
 
 export default function LoadImg({
   title,
@@ -13,9 +13,9 @@ export default function LoadImg({
   srcLarge,
   setUrl,
   setLargeUrl,
-  preview = true
+  preview = true,
 }) {
-  console.log("srcLarge", srcLarge);
+  console.log('srcLarge', srcLarge);
   const [isOpen, setOpen] = useState(false);
 
   // 下载图片
@@ -24,9 +24,9 @@ export default function LoadImg({
       try {
         const { data } = await services.filedownload({
           params: { fssid: id },
-          preloader
+          preloader,
         });
-        console.log("filedownload", data);
+        console.log('filedownload', data);
         let { buffer } = data;
         if (!/^data:image/.test(buffer)) {
           // 没有设置图片格式
@@ -35,10 +35,10 @@ export default function LoadImg({
         callbackFun && callbackFun(buffer); // eslint-disable-line
         nextFun && nextFun(); // eslint-disable-line
       } catch (e) {
-        console.log("filedownload报错", e);
+        console.log('filedownload报错', e);
       }
     },
-    []
+    [],
   );
 
   // 初始化小图
@@ -50,7 +50,7 @@ export default function LoadImg({
 
   // 打开图片预览
   const onOpen = useCallback(() => {
-    console.log("onOpen", preview, isOpen);
+    console.log('onOpen', preview, isOpen);
     if (!src) {
       return;
     }
@@ -66,7 +66,7 @@ export default function LoadImg({
           setOpen(true);
         }
       },
-      true
+      true,
     );
   }, [preview, fssid, setLargeUrl, srcLarge, src]);
 

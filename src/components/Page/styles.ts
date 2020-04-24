@@ -19,23 +19,23 @@ const useStyles = createUseStyles({
         height: '10px',
         backgroundImage: `url(${mobileHeader})`,
         backgroundSize: '100% 100%',
-        margin: '5px 10px'
+        margin: '5px 10px',
       },
       '& .status-name': {
         textAlign: 'center',
         height: '44px',
         lineHeight: '44px',
         color: '#fff',
-        fontSize: '17px'
-      }
+        fontSize: '17px',
+      },
     },
     '& .content': {
       flex: 1,
       overflowX: 'hidden',
       overflowY: 'auto',
-      overflowScrolling: 'touch'
-    }
-  }
+      overflowScrolling: 'touch',
+    },
+  },
 });
 
 export default useStyles;

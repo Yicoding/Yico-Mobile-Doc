@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 import { createUseStyles } from 'react-jss';
 
@@ -12,8 +12,8 @@ const useStyles = createUseStyles({
     overflowX: 'hidden',
     overflowY: 'auto',
     overflowScrolling: 'touch',
-    boxShadow: '0 3px 5px 0 #ccc'
-  }
+    boxShadow: '0 3px 5px 0 #ccc',
+  },
 });
 
 export default useStyles;

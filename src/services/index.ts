@@ -1,5 +1,5 @@
-import request from "./request";
-import api from "./api";
+import request from './request';
+import api from './api';
 
 const services = {};
 
@@ -15,7 +15,7 @@ function createService(apiOpts) {
 
     return request({
       ...restOpts,
-      ...params
+      ...params,
     });
   };
 }
