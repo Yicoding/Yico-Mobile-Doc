@@ -19,7 +19,6 @@ toc: menu
 import React from 'react';
 import { Button } from 'antd-mobile';
 
-
 export default () => <Button type="primary" inline>我是antd-mobile的按钮</Button>;
 ```
 

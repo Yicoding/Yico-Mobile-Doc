@@ -9,9 +9,23 @@ Demo:
  * desc: 我是简介，我可以用 `Markdown` 来编写
  */
 import React from 'react';
-import { Foo } from 'dumi-lib';
+import { ImgLoad } from 'dumi-lib';
+import styled from "styled-components";
 
-export default () => <Foo title="First Demo" />;
+const demoImg = require("@/assets/images/demo.png");
+
+const DemoBox = styled.div`
+  display: inline-block;
+`;
+
+export default () => (
+  <DemoBox>
+    <ImgLoad
+      title="Demo"
+      src={demoImg}
+    />
+  </DemoBox>
+);
 ```
 
 More skills for writing demo: https://d.umijs.org/guide/demo-principle
