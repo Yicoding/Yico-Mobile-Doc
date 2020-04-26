@@ -152,6 +152,18 @@ export const StepItem = createUseStyles({
       '&.icon-await': {
         backgroundImage: `url(${ellipsisGray})`,
         backgroundSize: '100% 100%',
+        width: '20px',
+        height: '20px',
+        marginRight: '6px',
+        right: '1px',
+        bottom: '1px',
+        '&.icon-large': {
+          width: '36px',
+          height: '36px',
+          marginRight: '4px',
+          right: '3px',
+          bottom: '2px'
+        }
       },
       '&.icon-error': {
         backgroundImage: `url(${iconError})`,
