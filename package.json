@@ -29,6 +29,7 @@
     "antd": "^4.1.4",
     "antd-mobile": "^2.3.1",
     "axios": "^0.19.2",
+    "classnames": "^2.2.6",
     "dumi": "^1.0.6",
     "father-build": "^1.17.2",
     "lint-staged": "^10.0.7",
@@ -36,8 +37,9 @@
     "react": "^16.12.0",
     "react-jss": "^10.1.1",
     "react-wx-images-viewer": "^1.0.6",
+    "store": "^2.0.12",
     "styled-components": "^5.1.0",
     "yorkie": "^2.0.0"
   },
-  "repository": "https://github.com/Yicoding/Yico-Mobile.git"
+  "repository": "https://github.com/Yicoding/Yico-Mobile-Doc.git"
 }

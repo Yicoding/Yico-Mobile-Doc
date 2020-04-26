@@ -1,4 +1,9 @@
-# Steps
+---
+group:
+  title: Steps 步骤条
+---
+
+# Steps 步骤条
 
 Steps 步骤条: 引导用户按照流程完成任务的导航条。
 
@@ -127,17 +132,17 @@ export default () => {
 
 | 属性      | 说明                                                                        | 类型   | 默认值 |
 | --------- | --------------------------------------------------------------------------- | ------ | ------ |
-| current   | 指定当前步骤，从 0 开始记数。在子 Step 元素中，可以通过 status 属性覆盖状态 | number | 0      |
-| size      | 尺寸,有 large 和 small 两种                                                 | string | large  |
-| direction | 指定步骤条方向,有 row 和 column 两种                                        | string | row    |
+| current   | 指定当前步骤，从 0 开始记数。 | `number` | `0`      |
+| size      | 尺寸,有 `large` 和 `small` 两种                                                 | `string` | `large`  |
+| direction | 指定步骤条方向,有 `row` 和 `column` 两种                                        | `string` | `row`    |
 
 ### Steps.Step
 
 | 属性   | 说明                                                                   | 类型                 | 默认值 |
 | ------ | ---------------------------------------------------------------------- | -------------------- | ------ |
-| status | 指定状态(active、disabled、process、await、pass-blue、pass-red、error) | string               | active |
-| title  | 标题                                                                   | string/React.Element        | -      |
-| desc   | 步骤的详情描述，可选                                                   | string/React.Element               | -      |
-| icon   | 步骤图标，可选                                                         | React.Element | -      |
+| status | 指定状态(`active`、`disabled`、`process`、`await`、`pass-blue`、`pass-red`、`error`) | `string`               | `active` |
+| title  | 标题                                                                   | `string/React.Element`        | -      |
+| desc   | 步骤的详情描述，可选                                                   | `string/React.Element`               | -      |
+| icon   | 步骤图标，可选                                                         | `React.Element` | -      |
 
 More skills for writing demo: https://d.umijs.org/guide/demo-principle
