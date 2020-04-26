@@ -39,7 +39,10 @@ export default function(props?: any) {
     if (!title) {
       return null;
     }
-    return <p className={classnames('title', `title-${status}`)}>{title}</p>;
+    if (typeof title === 'string') {
+      return <p className={classnames('title', `title-${status}`)}>{title}</p>;
+    }
+    return title;
   }, []);
 
   // 渲染描述

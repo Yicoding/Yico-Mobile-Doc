@@ -6,6 +6,7 @@ import { createUseStyles } from 'react-jss';
 const useStyles = createUseStyles({
   container: {
     width: '375px',
+    maxWidth: '100%',
     maxHeight: '667px',
     padding: '20px 0',
     background: '#fff',

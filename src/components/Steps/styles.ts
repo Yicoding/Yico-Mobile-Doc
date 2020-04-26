@@ -23,8 +23,8 @@ export const StepItem = createUseStyles({
           left: 'calc(50% + 15px)',
           width: '100%',
           height: '2px',
-          background: '#f54d4f',
-        },
+          background: '#f54d4f'
+        }
       },
       '&.line-disabled': {
         '&:after': {
@@ -35,12 +35,38 @@ export const StepItem = createUseStyles({
           transform: 'translateY(-50%)',
           width: '100%',
           height: '2px',
-          background: '#f7d3d5',
-        },
-      },
+          background: '#f7d3d5'
+        }
+      }
     },
     '&.item-column': {
       paddingBottom: '23px',
+      '&.item-large': {
+        '&.line-active': {
+          '&:after': {
+            top: '30px',
+            left: '14px',
+            height: 'calc(100% - 30px)'
+          }
+        },
+        '&.line-disabled': {
+          '&:after': {
+            top: '30px',
+            left: '14px',
+            height: 'calc(100% - 30px)'
+          }
+        },
+        '& .icon': {
+          marginRight: '8px',
+          marginBottom: 0
+        },
+        '& .step-txt': {
+          '& .title': {
+            height: '30px',
+            lineHeight: '26px'
+          }
+        }
+      },
       '&.line-active': {
         '&:after': {
           content: '""',
@@ -49,8 +75,8 @@ export const StepItem = createUseStyles({
           left: '8px',
           width: '2px',
           height: 'calc(100% - 18px)',
-          background: '#298bea',
-        },
+          background: '#298bea'
+        }
       },
       '&.line-disabled': {
         '&:after': {
@@ -60,13 +86,13 @@ export const StepItem = createUseStyles({
           left: '8px',
           width: '2px',
           height: 'calc(100% - 18px)',
-          background: '#ccc',
-        },
+          background: '#ccc'
+        }
       },
       '& .icon': {
         marginRight: '8px',
-        marginBottom: 0,
-      },
+        marginBottom: 0
+      }
     },
     '&.item-small': {
       '&.item-row': {
@@ -74,17 +100,17 @@ export const StepItem = createUseStyles({
           '&:after': {
             left: 'calc(50% + 9px)',
             top: '8px',
-            height: '1px',
-          },
+            height: '1px'
+          }
         },
         '&.line-disabled': {
           '&:after': {
             left: 'calc(50% + 9px)',
             top: '8px',
-            height: '1px',
-          },
-        },
-      },
+            height: '1px'
+          }
+        }
+      }
     },
     '& .icon': {
       color: '#fff',
@@ -97,46 +123,40 @@ export const StepItem = createUseStyles({
         fontSize: '17px',
         width: '30px',
         height: '30px',
-        lineHeight: '30px',
+        lineHeight: '30px'
       },
       '&.icon-small': {
         fontSize: '12px',
         width: '18px',
         height: '18px',
-        lineHeight: '18px',
+        lineHeight: '18px'
       },
       '&.icon-active': {
-        background: '#f54d4f',
+        background: '#f54d4f'
       },
       '&.icon-disabled': {
-        background: '#f7d3d5',
+        background: '#f7d3d5'
       },
       '&.icon-pass-red': {
         backgroundImage: `url(${checkRed})`,
-        backgroundSize: '100% 100%',
+        backgroundSize: '100% 100%'
       },
       '&.icon-pass-blue': {
         backgroundImage: `url(${checkBlue})`,
-        backgroundSize: '100% 100%',
+        backgroundSize: '100% 100%'
       },
       '&.icon-process': {
         backgroundImage: `url(${ellipsis})`,
-        backgroundSize: '100% 100%',
+        backgroundSize: '100% 100%'
       },
       '&.icon-await': {
         backgroundImage: `url(${ellipsisGray})`,
         backgroundSize: '100% 100%',
-        width: '21px',
-        height: '21px',
-        marginRight: '6px',
-        position: 'relative',
-        bottom: '1px',
-        right: '2px',
       },
       '&.icon-error': {
         backgroundImage: `url(${iconError})`,
-        backgroundSize: '100% 100%',
-      },
+        backgroundSize: '100% 100%'
+      }
     },
     '& .step-txt': {
       flex: 1,
@@ -147,23 +167,23 @@ export const StepItem = createUseStyles({
         lineHeight: 1,
         '&.title-active, &.title-pass-red': {
           fontSize: '15px',
-          color: '#f54d4f',
+          color: '#f54d4f'
         },
         '&.title-disabled': {
           fontSize: '15px',
-          color: '#f7d3d5',
+          color: '#f7d3d5'
         },
         '&.title-process, &.title-pass-blue': {
-          color: 'rgba(0, 0, 0, 0.8)',
+          color: 'rgba(0, 0, 0, 0.8)'
         },
       },
       '& .desc': {
         fontSize: '15px',
         color: 'rgba(0, 0, 0, 0.45)',
-        marginTop: '6px',
-      },
-    },
-  },
+        marginTop: '6px'
+      }
+    }
+  }
 });
 
 const StepBox = createUseStyles({
@@ -172,15 +192,15 @@ const StepBox = createUseStyles({
     padding: '20px 0',
     '&.column': {
       flexDirection: 'column',
-      padding: '0 20px',
+      padding: '0 20px'
     },
     '& div, & p': {
-      margin: 0,
+      margin: 0
     },
     '& > div': {
-      flex: 1,
-    },
-  },
+      flex: 1
+    }
+  }
 });
 
 export default StepBox;

@@ -74,9 +74,9 @@ export default () => {
   return (
     <Container>
       <Steps size="small" direction="column" current={1}>
-        <Step status="pass-blue" title="Step1" desc="This is description" />
-        <Step status="process" title="Step2" desc="This is description" />
-        <Step status="await" title="Step3" desc="This is description" />
+        <Step status="pass-blue" title="Step1" desc="This is desc" />
+        <Step status="process" title="Step2" desc="This is desc" />
+        <Step status="await" title="Step3" desc="This is desc" />
       </Steps>
     </Container>
   );
@@ -98,7 +98,7 @@ const { Step } = Steps;
 export default () => {
   return (
     <Container>
-      <Steps size="small" direction="column" current={1}>
+      <Steps  direction="column" current={1}>
         <Step status="pass-blue" title="pass-blue" />
         <Step status="process" title="process" />
         <Step status="await" title="await" />
@@ -136,8 +136,8 @@ export default () => {
 | 属性   | 说明                                                                   | 类型                 | 默认值 |
 | ------ | ---------------------------------------------------------------------- | -------------------- | ------ |
 | status | 指定状态(active、disabled、process、await、pass-blue、pass-red、error) | string               | active |
-| title  | 标题                                                                   | React.Element        | -      |
-| desc   | 步骤的详情描述，可选                                                   | string               | -      |
-| icon   | 步骤图标，可选                                                         | object/React.Element | -      |
+| title  | 标题                                                                   | string/React.Element        | -      |
+| desc   | 步骤的详情描述，可选                                                   | string/React.Element               | -      |
+| icon   | 步骤图标，可选                                                         | React.Element | -      |
 
 More skills for writing demo: https://d.umijs.org/guide/demo-principle
