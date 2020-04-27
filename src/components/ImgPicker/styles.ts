@@ -28,13 +28,17 @@ const Container = createUseStyles({
     }
   },
   container: {
-    width: '100%',
-    height: '100%',
+    width: '90px',
+    height: '90px',
     boxSizing: 'border-box',
     position: 'relative',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
+    '&.auto-fill': {
+      width: '100%',
+      height: '100%',
+    },
     '& .hide': {
       display: 'none',
     },

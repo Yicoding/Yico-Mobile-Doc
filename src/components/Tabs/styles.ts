@@ -14,6 +14,7 @@ export const TabContainer = createUseStyles({
       background: 'linear-gradient(90deg, hsla(0, 0%, 100%, 0), #fff)'
     },
     '& > ul': {
+      position: 'relative',
       padding: '0 20px 0 0',
       margin: 0,
       fontSize: 0,
@@ -44,19 +45,16 @@ export const TabContainer = createUseStyles({
           color: '#f54d4f',
           fontSize: '15px',
           fontWeight: 'bold',
-          position: 'relative',
-          '&:after': {
-            content: '""',
-            display: 'inline-block',
-            width: '25px',
-            height: '2px',
-            background: '#f54d4f',
-            position: 'absolute',
-            bottom: 0,
-            left: '50%',
-            transform: 'translateX(-50%)'
-          }
+          position: 'relative'
         }
+      },
+      '& > i': {
+        display: 'inline-block',
+        height: '2px',
+        position: 'absolute',
+        bottom: 0,
+        background: '#f54d4f',
+        transition: 'all .2s linear'
       }
     }
   }

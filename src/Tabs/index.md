@@ -44,7 +44,7 @@ import { Container, Tabs } from 'dumi-lib';
 
 export default () => {
 
-  const tabs = ["1 of Tab", "2 of Tab", "3 of Tab", "4 of Tab", "5 of Tab"];
+  const tabs = ["1 of Tab", "2 of Tab", "3 of Tab", "4 of Tab", "5 of Tab", "6 of Tab", "7 of Tab"];
 
   return (
     <Container>

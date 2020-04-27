@@ -7,7 +7,7 @@ import Container from './styles';
 
 import { iconDelete } from '../Icon';
 
-export default forwardRef(function BaseImgPicker(props?: any, ref?: any) {
+export default forwardRef(function BaseImgPicker(props, ref) {
 
   const classes = Container();
 
@@ -15,7 +15,7 @@ export default forwardRef(function BaseImgPicker(props?: any, ref?: any) {
 
   const childrenEle = (
     <div className={classes.childrenEle} />
-  )
+  );
 
   const {
     showAdd = true,
@@ -29,7 +29,8 @@ export default forwardRef(function BaseImgPicker(props?: any, ref?: any) {
     showBorderAround,
     filedownload = noon,
     onFileChange = noon,
-    onFileHandle = noon
+    onFileHandle = noon,
+    autoFill = false
   } = props;
 
   const [isOpen, setOpen] = useState(false);
@@ -63,7 +64,6 @@ export default forwardRef(function BaseImgPicker(props?: any, ref?: any) {
   const onChange = useCallback(e => {
     const fileSelectorEl = e.target;
     const { files } = fileSelectorEl;
-    console.log("files", files);
     if (!files || !files.length) {
       return;
     }
@@ -72,9 +72,7 @@ export default forwardRef(function BaseImgPicker(props?: any, ref?: any) {
       Toast.info(`图片大小不能超过${size}M`);
       return;
     }
-    if (onFileChange) {
-      onFileChange(files);
-    }
+    onFileChange(files);
   }, [size]);
 
   // 点击input
@@ -87,7 +85,11 @@ export default forwardRef(function BaseImgPicker(props?: any, ref?: any) {
   );
 
   return (
-    <div className={classnames(classes.container, !urlSmall && showBg ? classes.containerBg : '', urlSmall ? classes.containerBorder : '')}>
+    <div className={classnames(
+      classes.container,
+      autoFill ? 'auto-fill' : null,
+      !urlSmall && showBg ? classes.containerBg : '',
+      urlSmall ? classes.containerBorder : '')}>
       {urlSmall && (
         <div className="delete-box" onClick={() => onFileChange()}>
           <img alt="" src={iconDelete} className="delete" />

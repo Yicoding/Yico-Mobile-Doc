@@ -49,6 +49,7 @@ export default () => {
           setUrlMiddle={setUrlMiddle}
           onFileClick={onFileClick}
           showDashed
+          autoFill
         />
       </div>
     </Container>
@@ -93,6 +94,7 @@ export default () => {
             setUrlMiddle={setUrlMiddle}
             onFileClick={onFileClick}
             showBorderAround
+            autoFill
           />
         </div>
         <div>
@@ -106,6 +108,7 @@ export default () => {
             setUrlMiddle={setUrlMiddle}
             onFileClick={onFileClick}
             showBg
+            autoFill
           />
         </div>
       </div>
@@ -150,12 +153,13 @@ export default () => {
 
   return (
     <Container>
-      <div className={classes.box}>
+      <div className={classes.boxSingle}>
         <BaseImgPicker
           title="测试用例"
           urlSmall={urlSmall}
           urlMiddle={urlMiddle}
           onFileChange={onFileChange}
+          showBg
         />
       </div>
     </Container>
@@ -196,7 +200,8 @@ export default () => {
 | preview | 是否可以查看大图                                       | `boolean` | `false`   |
 | showBg | 是否展示背景色                                       | `boolean` | `false`   |
 | showDashed | 是否展示描边框                                       | `boolean` | `false`   |
-| showBorderAround | 是否展示边框框                                       | `boolean` | `false`   |
+| showBorderAround | 是否展示边框                                      | `boolean` | `false`   |
+| autoFill | 是否填充父元素                                       | `boolean` | `false`   |
 
 ### BaseImgPicker
 | 属性      | 说明                                                                        | 类型   | 默认值 |
@@ -213,5 +218,5 @@ export default () => {
 | preview | 是否可以查看大图                                       | `boolean` | `false`   |
 | showBg | 是否展示背景色                                       | `boolean` | `false`   |
 | showDashed | 是否展示描边框                                       | `boolean` | `false`   |
-| showBorderAround | 是否展示边框框                                       | `boolean` | `false`   |
-
+| showBorderAround | 是否展示边框                                      | `boolean` | `false`   |
+| autoFill | 是否填充父元素                                       | `boolean` | `false`   |

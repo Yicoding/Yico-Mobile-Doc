@@ -86,7 +86,8 @@ export default () => {
 | forerverTxt   | 长期文案描述 | `string` | `长期`      |
 | foreverDate   | 长期日期YYYY-MM-DD | `string` | `9999-12-31`      |
 | minDate   | 最小可选日期 | `Date` | `new Date(1980, 0, 1, 23, 59, 59)`      |
-| maxDate   | 最大可选日期D | `Date` | `new Date(2100, 11, 30, 23, 59, 59)`      |
+| maxDate   | 最大可选日期 | `Date` | `new Date(2100, 11, 30, 23, 59, 59)`      |
+| format   | 日期格式 | `string` | `YYYY-MM-DD`      |
 
 
 More skills for writing demo: https://d.umijs.org/guide/demo-principle

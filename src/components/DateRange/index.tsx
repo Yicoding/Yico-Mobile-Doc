@@ -23,12 +23,11 @@ export default function DateRange(props) {
     forerverTxt = "长期",
     foreverDate = '9999-12-31',
     minDate = new Date(1980, 0, 1, 23, 59, 59),
-    maxDate = new Date(2100, 11, 30, 23, 59, 59)
+    maxDate = new Date(2100, 11, 30, 23, 59, 59),
+    format = 'YYYY-MM-DD'
   } = props;
 
   const classes = DateBox();
-
-  const format = "YYYY-MM-DD";
 
   const [checked, setChecked] = useState(false);
   const [snapDate, setSnapDate] = useState();
