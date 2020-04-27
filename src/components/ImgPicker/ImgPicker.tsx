@@ -7,8 +7,6 @@ import { bufferData } from '../Icon';
 
 export default function ImgPicker(props?: any) {
 
-  const ref = useRef();
-
   // 空函数
   const noon = useCallback(() => {}, []);
 
@@ -86,7 +84,7 @@ export default function ImgPicker(props?: any) {
       e.preventDefault();
       ls.set(name, true);
     }
-    onFileClick(name, ref.current, showTipmodal);
+    onFileClick(name, e.target, showTipmodal);
   }, [name]);
 
   // 初始化小图
@@ -98,7 +96,6 @@ export default function ImgPicker(props?: any) {
 
   return (
     <BaseImgPicker
-      ref={ref}
       urlSmall={urlSmall}
       urlMiddle={urlMiddle}
       filedownload={filedownload}

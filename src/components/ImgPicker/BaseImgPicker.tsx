@@ -18,7 +18,8 @@ export default forwardRef(function BaseImgPicker(props?: any, ref?: any) {
   )
 
   const {
-    children = childrenEle,
+    showAdd = true,
+    children = showAdd ? childrenEle : null,
     urlSmall,
     urlMiddle,
     preview = true,
@@ -60,10 +61,7 @@ export default forwardRef(function BaseImgPicker(props?: any, ref?: any) {
 
   // input改变
   const onChange = useCallback(e => {
-    if (!ref) {
-      return;
-    }
-    const fileSelectorEl = ref.current;
+    const fileSelectorEl = e.target;
     const { files } = fileSelectorEl;
     console.log("files", files);
     if (!files || !files.length) {

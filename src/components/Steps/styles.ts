@@ -160,7 +160,7 @@ export const StepItem = createUseStyles({
         '&.icon-large': {
           width: '36px',
           height: '36px',
-          marginRight: '4px',
+          marginRight: '3px !important',
           right: '3px',
           bottom: '2px'
         }

@@ -1,7 +1,15 @@
 export { default as Page } from './components/Page';
 export { default as Container } from './components/Container';
 export { default as Title } from './components/Title';
+export { default as CommonTitle } from './components/CommonTitle';
+export { default as Empty } from './components/Empty';
+export { default as Tabs } from './components/Tabs';
 export { ImgPreview, BaseImgPreview } from './components/ImgPreview';
 export { ImgPicker, BaseImgPicker } from './components/ImgPicker';
 export { default as Steps } from './components/Steps';
+export { default as DateRange } from './components/DateRange';
+export { default as InputItemFill } from './components/InputItemFill';
+export { default as ItemFill } from './components/ItemFill';
+export { default as ItemTxt } from './components/ItemTxt';
+export { default as TextAreaFill } from './components/TextAreaFill';
 import 'antd-mobile/dist/antd-mobile.css';

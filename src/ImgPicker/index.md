@@ -7,7 +7,7 @@ group:
 
 # 何时使用
 
-上传图片时分为小图和中图
+上传图片后，服务端将图片保存为`小图`、`中图`和`大图`三种形式，缩略图显示小图，点击缩略图展示中图或者大图。三种图片从服务端获取的方式为根据`图片id`发送`ajax`请求拿到对应的`buffer`。
 
 # 代码演示
 
@@ -20,11 +20,11 @@ group:
  */
 import React, { useState, useCallback } from 'react';
 import { Container, ImgPicker } from 'dumi-lib';
-import imgBox from './styles';
+import ImgBox from './styles';
 
 export default () => {
 
-  const classes = imgBox();
+  const classes = ImgBox();
 
   const [urlSmall, setUrlSmall] = useState('');
   const [urlMiddle, setUrlMiddle] = useState('');
@@ -63,11 +63,11 @@ export default () => {
  */
 import React, { useState, useCallback } from 'react';
 import { Container, ImgPicker } from 'dumi-lib';
-import imgBox from './styles';
+import ImgBox from './styles';
 
 export default () => {
 
-  const classes = imgBox();
+  const classes = ImgBox();
 
   const [urlSmall, setUrlSmall] = useState('');
   const [urlMiddle, setUrlMiddle] = useState('');
@@ -114,25 +114,39 @@ export default () => {
 };
 ```
 
-## BaseImgPicker
+## BaseImgPicker 基础上传组件
 
 ```tsx
 /**
  * title: 基础上传组件
  */
-import React, { useState } from 'react';
+import React, { useState, useCallback, useRef } from 'react';
 import { Container, BaseImgPicker } from 'dumi-lib';
-import imgBox from './styles';
+import ImgBox from './styles';
 
 
 export default () => {
 
-  const classes = imgBox();
+  const classes = ImgBox();
   const fssidSmall = 'small';
   const fssidMiddle = 'middle';
 
   const [urlSmall, setUrlSmall] = useState('');
   const [urlMiddle, setUrlMiddle] = useState('');
+
+  const onFileChange = useCallback(files => {
+    if (!files) { // 删除图片
+      setUrlSmall();
+      setUrlMiddle();
+      return;
+    }
+    const reader = new FileReader();
+    reader.readAsDataURL(files[0]);
+    reader.onload = function(e) {
+      setUrlSmall(e.target.result);
+      setUrlMiddle(e.target.result);
+    }
+  }, []);
 
   return (
     <Container>
@@ -141,6 +155,7 @@ export default () => {
           title="测试用例"
           urlSmall={urlSmall}
           urlMiddle={urlMiddle}
+          onFileChange={onFileChange}
         />
       </div>
     </Container>
@@ -164,7 +179,9 @@ export default () => {
 ### ImgPicker
 | 属性      | 说明                                                                        | 类型   | 默认值 |
 | --------- | --------------------------------------------------------------------------- | ------ | ------ |
+| ref   | ref标识 | `object` |   -      |
 | children   | 子元素 | `React.Element` |   `+`      |
+| showAdd   | 是否显示默认子元素 | `boolean` |   `true`      |
 | size   | 文件大小限制 | `number` |   `10M`      |
 | urlSmall | 小图url                                        | `string` | -    |
 | urlMiddle | 中图url                                        | `string` | -    |
@@ -184,7 +201,9 @@ export default () => {
 ### BaseImgPicker
 | 属性      | 说明                                                                        | 类型   | 默认值 |
 | --------- | --------------------------------------------------------------------------- | ------ | ------ |
+| ref   | ref标识 | `object` |   -      |
 | children   | 子元素 | `React.Element` |   `+`      |
+| showAdd   | 是否显示默认子元素 | `boolean` |   `true`      |
 | size   | 文件大小限制 | `number` |   `10M`      |
 | urlSmall | 小图url                                        | `string` | -    |
 | urlMiddle | 中图url                                        | `string` | -    |

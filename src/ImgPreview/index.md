@@ -21,12 +21,12 @@ ImgPreview 图片预览: 显示缩略图并可以点击查看大图。
  */
 import React, { useState } from 'react';
 import { Container, ImgPreview } from 'dumi-lib';
-import imgBox from './styles';
+import ImgBox from './styles';
 
 
 export default () => {
 
-  const classes = imgBox();
+  const classes = ImgBox();
   const fssidSmall = 'small';
   const fssidMiddle = 'middle';
 
@@ -60,12 +60,12 @@ export default () => {
  */
 import React, { useState } from 'react';
 import { Container, ImgPreview } from 'dumi-lib';
-import imgBox from './styles';
+import ImgBox from './styles';
 
 
 export default () => {
 
-  const classes = imgBox();
+  const classes = ImgBox();
   const fssidSmall = 'small';
   const fssidMiddle = 'middle';
 
@@ -99,11 +99,11 @@ export default () => {
  */
 import React, { useState } from 'react';
 import { Container, BaseImgPreview } from 'dumi-lib';
-import imgBox from './styles';
+import ImgBox from './styles';
 
 export default () => {
 
-  const classes = imgBox();
+  const classes = ImgBox();
   const fssidSmall = 'small';
   const fssidMiddle = 'middle';
 
