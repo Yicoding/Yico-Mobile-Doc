@@ -64,6 +64,7 @@ export default () => {
 | tabs   | tab数据 | `Models.TabData[]` | `[]`      |
 | initialPage   | 初始化Tab, index | `number` | `0`      |
 | num   | 超过几个标签开启左右滑动 | `number` | `4`      |
+| lineWidth   | 下划线宽度 | `number` | `26`      |
 | onChange   | tab变化时触发 | 返回`item、index` | -      |
 
 
