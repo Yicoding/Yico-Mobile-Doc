@@ -60,7 +60,6 @@ export default function (props) {
     <div className={classes.box}>
       <ul
         ref={ref}
-        num={num}
         className={tabs && tabs.length > num ? "tab-scroll" : ""}
       >
         {tabs &&

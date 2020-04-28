@@ -6,7 +6,7 @@ import React, { useState, useCallback, forwardRef } from "react";
 import { InputItem } from "antd-mobile";
 import InputItemBox from "./styles";
 
-export default forwardRef(function InputItemFill({type, extra, onExtraClick, ...props}, ref) {
+export default forwardRef(function InputItemFill({type, extra, ableSwitch = false, onExtraClick, ...props}, ref) {
 
   const iconEye = require('@/assets/images/icon-eye.png');
   const iconEyePass = require('@/assets/images/icon-eye-pass.png');
@@ -27,8 +27,8 @@ export default forwardRef(function InputItemFill({type, extra, onExtraClick, ...
     <div className={classes.box}>
       <InputItem
         ref={ref}
-        type={type === 'password' ? (isPassWord ? type : 'text') : type}
-        extra={ extra || type === 'password' ? extraFun() : null}
+        type={ableSwitch && type === 'password' ? (isPassWord ? type : 'text') : type}
+        extra={ extra || ableSwitch && type === 'password' ? extraFun() : null}
         onExtraClick={onExtraClick || type === 'password' ? onExtraClickFun : noon}
         {...props}
       />

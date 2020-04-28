@@ -36,7 +36,7 @@ export default () => {
 ```tsx
 /**
  * title: 密码框
- * desc: 切换明文和暗文,type = password 时显示
+ * desc: 切换明文和暗文,type = password 并且 ableSwitch = true 时显示
  */
 import React, { useState, useCallback } from 'react';
 import { List } from 'antd-mobile';
@@ -54,6 +54,7 @@ export default () => {
       <List>
         <InputItemFill
           type="password"
+          ableSwitch
           value={value}
           labelNumber={7}
           placeholder="请输入标题"
@@ -69,7 +70,7 @@ export default () => {
 
 | 属性      | 说明                                                                        | 类型   | 默认值 |
 | --------- | --------------------------------------------------------------------------- | ------ | ------ |
-| children   | 标题文案 | `string/React.Element` | -      |
+| children   | label文案 | `string/React.Element` | -      |
 | value   | value值 | `string` | -      |
 | placeholder   | placeholder | `string` | -      |
 | disabled   | 是否禁用 | `boolean` | `false`      |
@@ -77,7 +78,8 @@ export default () => {
 | maxLength   | 最大长度 | `number` | -      |
 | extra   | extra 点击事件触发的回调函数 | `(e: Object)` | -      |
 | onExtraClick   | 右边注释 | `string/React.Element` | -      |
-| onChange   | change 事件触发的回调函数 | `(val: string): void` | -      |
+| onExtraClick   | 右边注释 | `string/React.Element` | -      |
+| ableSwitch   | 是否允许密码框切换 | `boolean` | `false`      |
 | onBlur   | blur 事件触发的回调函数 | `(val: string): void` | -      |
 | onFocus   | focus 事件触发的回调函数 | `(val: string): void` | -      |
 
