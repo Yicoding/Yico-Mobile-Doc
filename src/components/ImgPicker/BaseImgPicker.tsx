@@ -72,7 +72,11 @@ export default forwardRef(function BaseImgPicker(props, ref) {
       Toast.info(`图片大小不能超过${size}M`);
       return;
     }
-    onFileChange(files);
+    const reader = new FileReader();
+    reader.readAsDataURL(files[0]);
+    reader.onload = function(e) {
+      onFileChange(files[0], e.target.result);
+    }
   }, [size]);
 
   // 点击input

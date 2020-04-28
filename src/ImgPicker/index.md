@@ -137,18 +137,14 @@ export default () => {
   const [urlSmall, setUrlSmall] = useState('');
   const [urlMiddle, setUrlMiddle] = useState('');
 
-  const onFileChange = useCallback(files => {
-    if (!files) { // 删除图片
+  const onFileChange = useCallback((file, buffer) => {
+    if (!file) { // 删除图片
       setUrlSmall();
       setUrlMiddle();
       return;
     }
-    const reader = new FileReader();
-    reader.readAsDataURL(files[0]);
-    reader.onload = function(e) {
-      setUrlSmall(e.target.result);
-      setUrlMiddle(e.target.result);
-    }
+    setUrlSmall(buffer);
+    setUrlMiddle(buffer);
   }, []);
 
   return (

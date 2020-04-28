@@ -61,15 +61,16 @@ export default function ImgPicker(props?: any) {
   );
 
   // input改变
-  const onFileChange = useCallback((files) => {
-    if (!files) {
+  const onFileChange = useCallback((file, buffer) => {
+    if (!file) {
       setUrlSmall();
       setUrlMiddle();
       setUrlLarge();
       return;
     }
-    upLoad(files, ({ data, src }) => {
-      setUrlSmall(src);
+    upLoad(file, ({ data }) => {
+      setUrlSmall(buffer);
+      setUrlMiddle(buffer);
       setFssidSmall(data.fssIdSmall);
       setFssidMiddle(data.fssIdMiddle);
       setFssidLarge(data.fssId);
