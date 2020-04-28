@@ -37,7 +37,7 @@ export default function (props) {
         if (index < 2) {
           return ref.current.scrollTo(0, 0);
         }
-        ref.current.scrollTo(e.target.offsetLeft / 2, 0);
+        ref.current.scrollTo(e.target.offsetLeft - e.target.offsetWidth, 0); // 自身偏移量 - 自身宽度
       }
     },
     [tabIndex, tabs, num]
@@ -49,7 +49,10 @@ export default function (props) {
       console.log('tabs', ref.current.children);
       const { children } = ref.current;
       console.log('children', children[initialPage], children[initialPage].offsetLeft);
-      setLeft(children[initialPage].offsetLeft + children[initialPage].offsetWidth / 2 - lineWidth / 2);
+      setLeft(children[initialPage].offsetLeft + children[initialPage].offsetWidth / 2 - lineWidth / 2); // 下划线偏移量
+      if (initialPage > 1) {
+        ref.current.scrollTo(children[initialPage].offsetLeft - children[initialPage].offsetWidth, 0); // 容器偏移量
+      }
     }
   }, [tabs, initialPage]);
 

@@ -15,17 +15,23 @@ Tabs 标签页: 用于让用户在不同的视图中进行切换。
 /**
  * title: 基本用法
  */
-import React from 'react';
+import React, { useCallback } from 'react';
 import { Container, Tabs } from 'dumi-lib';
 
 export default () => {
 
   const tabs = ["1 of Tab", "2 of Tab", "3 of Tab", "4 of Tab"];
+  
+  // 
+  const onChange = useCallback((item, index) => {
+    console.log('onChange', item, index);
+  }, []);
 
   return (
     <Container>
       <Tabs
         tabs={tabs}
+        onChange={onChange}
       />
     </Container>
   );
@@ -44,13 +50,13 @@ import { Container, Tabs } from 'dumi-lib';
 
 export default () => {
 
-  const tabs = ["1 of Tab", "2 of Tab", "3 of Tab", "4 of Tab", "5 of Tab", "6 of Tab", "7 of Tab"];
+  const tabs = ["1 of Tab", "2 of Tab", "3 of Tab", "4 of Tab", "5 of Tab", "6 of Tab", "7 of Tab", "8 of Tab", "9 of Tab", "10 of Tab"];
 
   return (
     <Container>
       <Tabs
         tabs={tabs}
-        initialPage={1}
+        initialPage={8}
       />
     </Container>
   );
